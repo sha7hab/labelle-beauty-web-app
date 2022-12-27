@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import menuIcon from "../img/menu.png";
 import cartIcon from "../img/cart.png";
 
+import perfume from "../img/perfume.png";
+import multiLift from "../img/multiLift.png";
+import styler from "../img/styler.png";
+import facePowder from "../img/facePowder.png";
+
 import arrowIcon from "../img/arrow.png";
+
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+
 
 function Home() {
 
     const [visible, setVisible] = useState(true);
+    const navigate = useNavigate();
 
     return (
         <header className="App-header">
@@ -32,7 +42,7 @@ function Home() {
             src={menuIcon}
                 style={{
                     position: "absolute",
-                    marginTop: -753,
+                    marginTop: -750,
                     marginLeft: -158
                 }}
             >
@@ -41,17 +51,19 @@ function Home() {
         </img>
         </Link>
 
+        <Link to="/MyCart">
         <img
             src={cartIcon}
                 style={{
                     position: "absolute",
-                    marginTop: -670,
-                    marginLeft: 290
+                    marginTop: -760,
+                    marginLeft: 130
                 }}
             >
 
             
         </img>
+        </Link>
 
         <p
               style={{
@@ -106,7 +118,7 @@ function Home() {
                     color: "#BBBBBB",
                   }}
             >
-                O Search
+                Search
             </p>
 
         </div>
@@ -121,7 +133,7 @@ function Home() {
             }}>
                 
                 {
-                    [0, 1, 2, 3, 4, 5, 6].map((data, key) => (
+                    [0, 1, 2, 3, 4].map((data, key) => (
 
                         <div style={{
                             width: 60,
@@ -146,12 +158,18 @@ function Home() {
 
             </div>
 
+
+                
             <div style={{
                 display: "flex",
-                flexDirection: "row"
+                flexDirection: "row",
+                //overflowX: 'scroll',
+                maxWidth: 0,
+
             }}>
                 
-                {
+                
+                {/* {
                     ["Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
 
                         <div style={{
@@ -206,10 +224,99 @@ function Home() {
 
 
 
-                }
+                } */}
 
+                <div style={{width: 380, marginTop: -430, marginLeft: -190}}>
+                <ScrollMenu style={{}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
+
+                    <div style={{
+                        marginLeft: 30
+                    }}></div>
+                    
+                    {
+                        ["Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
+
+                            <div 
+                                onClick={() => navigate("/Product")}
+                                style={{
+                                width: 200,
+                                height: 300,
+                                background: "white",
+                                marginTop: 0 ,
+                                marginRight: 20,
+                                borderRadius: 35,
+                                marginBottom: 80
+                            }}>
+    
+                                <img 
+                                    src={key%2 == 0 ? perfume : multiLift}
+                                    style={{
+                                        position: "absolute",
+                                        width: 110,
+                                        marginTop: 30,
+                                        marginLeft: -55
+                                    }}
+                                    ></img> 
+                                <p style={{
+                                    position: "absolute",
+                                    color: "black",
+                                    marginTop: 170,
+                                    marginLeft: 22,
+                                    fontSize: 24,
+                                    fontWeight: "700",
+                                    width: 160
+                                }}>{data}</p>
+                                <p style={{
+                                    position: "absolute",
+                                    color: "black",
+                                    marginTop: 210,
+                                    marginLeft: 10,
+                                    width: 190,
+                                    fontSize: 14
+                                }}>Pure ring with Diamonds (0.1400 Ct)</p>
+    
+                                <div style={{
+                                    width: 130,
+                                    height: 40,
+                                    position: "absolute",
+                                    marginTop: 250,
+                                    marginLeft: 35,
+                                    borderRadius: 9,
+                                    background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
+                                }}>
+                                    <p
+                                        style={{
+                                            position: "absolute",
+                                            marginTop: 9,
+                                            marginLeft: 40
+                                        }}
+                                    >$ 600</p>
+                                </div>
+            
+                            </div>
+    
+                        
+
+                    ))}
+                    </ScrollMenu>
+                    </div>
+                
+                
 
             </div>
+
+            {/* <div style={{
+                    width: 500,
+                    height: 490,
+                    backgroundColor: "black",
+                    position: "absolute",
+                    marginTop: 300,
+                    marginLeft: 887
+                }}>
+
+                </div> */}
+
+            
             </>
             :false
         }
@@ -237,7 +344,7 @@ function Home() {
             width: "52px",
             height: "52px",
             marginTop: -75,
-            marginLeft: -20,
+            marginLeft: -25,
             borderRadius: "20px",
             backgroundImage: "linear-gradient(291deg, #8F93EA, #FFAE88)",
             }}
@@ -254,7 +361,7 @@ function Home() {
           style={{
             position: "absolute",
             marginTop: -60,
-            marginLeft: -10
+            marginLeft: -15
         }}>
             <svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M28.6652 11.7783L22.3693 20.7431C19.3906 24.9846 17.9012 27.1053 15.8225 27.1053C13.7438 27.1053 12.2544 24.9846 9.27569 20.7431L2.89939 11.6639C1.76251 10.045 1.19406 9.23562 1.0427 8.34616C0.954465 7.82771 0.969338 7.29695 1.08646 6.78425C1.2874 5.90467 1.90028 5.12836 3.12603 3.57573C3.94142 2.54291 4.34911 2.0265 4.87314 1.67579C5.18067 1.46997 5.51527 1.30782 5.86737 1.19398C6.46735 1 7.12529 1 8.44118 1H23.064C24.3881 1 25.0501 1 25.6545 1.19708C25.9796 1.30308 26.2897 1.45031 26.5773 1.63518C27.1121 1.97891 27.5306 2.49192 28.3676 3.51793C29.6712 5.11594 30.323 5.91494 30.5309 6.83036C30.6418 7.31875 30.66 7.82363 30.5845 8.31874C30.4431 9.24674 29.8505 10.0906 28.6652 11.7783Z" stroke="#FEFBFC" stroke-width="1.5"/>

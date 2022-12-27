@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 import arrowIcon from "../img/arrow.png";
+
 import perfume from "../img/perfume.png";
 import multiLift from "../img/multiLift.png";
 import styler from "../img/styler.png";
@@ -166,7 +167,27 @@ function Onboarding() {
                 color: "#6A515E",
               }}
             >
-              The best beauty in The Town Now!
+              {
+                activeKey == 0 ?
+                "The best Perfumes find in labelle.ir!"
+                : false
+              }
+              {
+                activeKey == 1 ?
+                "Lift your skin with multi-lift cream!"
+                : false
+              }
+              {
+                activeKey == 2 ?
+                "Darker eyelashes w/ sourcils styler!"
+                : false
+              }
+              {
+                activeKey == 3 ?
+                "Real scent of flowers in spring!"
+                : false
+              }
+              
             </p>
 
         </div>
