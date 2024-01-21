@@ -11,6 +11,10 @@ import multiLift from "../img/multiLift.png";
 import styler from "../img/styler.png";
 import facePowder from "../img/facePowder.png";
 
+import frag from "../img/frag.webp";
+
+import deep from "../img/deep.png";
+
 import arrowIcon from "../img/arrow.png";
 
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
@@ -84,7 +88,7 @@ function Home() {
                 color: "#6A515E",
               }}
             >
-              Best beauty App for you
+              Cute beauty <br/> for you
             </p>
 
         
@@ -234,7 +238,7 @@ function Home() {
                     }}></div>
                     
                     {
-                        ["Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
+                        ["NIVEA MEN", "FRAGRANCE", "Lancome", "Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
 
                             <div 
                                 onClick={() => navigate("/Product")}
@@ -249,7 +253,7 @@ function Home() {
                             }}>
     
                                 <img 
-                                    src={key%2 == 0 ? perfume : multiLift}
+                                    src={key%2 == 0 ? deep : frag}
                                     style={{
                                         position: "absolute",
                                         width: 110,
@@ -273,7 +277,7 @@ function Home() {
                                     marginLeft: 10,
                                     width: 190,
                                     fontSize: 14
-                                }}>Pure ring with Diamonds (0.1400 Ct)</p>
+                                }}>DEEP 48h</p>
     
                                 <div style={{
                                     width: 130,
@@ -290,7 +294,7 @@ function Home() {
                                             marginTop: 9,
                                             marginLeft: 40
                                         }}
-                                    >$ 600</p>
+                                    >۸۷،۰۰۰</p>
                                 </div>
             
                             </div>
