@@ -277,7 +277,10 @@ function Home() {
                                     marginLeft: 10,
                                     width: 190,
                                     fontSize: 14
-                                }}>DEEP 48h</p>
+                                }}>
+                                    اسپری مردانه نیوآ
+                                    <br/> 
+                                    DEEP 48h</p>
     
                                 <div style={{
                                     width: 130,
