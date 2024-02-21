@@ -25,6 +25,8 @@ function Home() {
     const [visible, setVisible] = useState(true);
     const navigate = useNavigate();
 
+    const [searchVal, setSearchVal] = useState("");
+
     return (
         <header className="App-header">
 
@@ -88,7 +90,7 @@ function Home() {
                 color: "#6A515E",
               }}
             >
-              Cute beauty <br/> for you
+              Labelle Beauty <br/> for you
             </p>
 
         
@@ -98,12 +100,49 @@ function Home() {
                 height: 70,
                 marginTop: -270,
                 borderRadius: 18,
-                backgroundColor: "#FFFFFF",
+                //backgroundColor: "black",
                 position: "absolute",
             }}
         >   
 
-            <p
+        <input
+            type="text"
+            //value={searchVal}
+            placeholder= "Search"
+            onChange={(e) => {
+              setSearchVal(e.target.value);
+              /* setLiversSelect(true);
+              setKebabsSelect(true);
+              setSidesSelect(true);
+              setDrinksSelect(true); */
+              
+
+
+              
+            }}
+            style={{
+              width: 330,
+              maxWidth: "800px",
+              height: 200,
+              fontSize: "18px",
+              fontWeight: "700",
+              color: "black",
+              borderColor: "white",
+              borderWidth: "20px",
+              borderWidth: "5px",
+              borderStyle: "solid",
+              borderRadius: "13px",
+              marginTop: "10px",
+              marginLeft: "0px",
+              height: "50px",
+              boxSizing: "border-box",
+              paddingLeft: "1rem",
+              //backgroundColor: 'rgba(0,0,0,0)',
+            }}
+         />
+        
+
+            {/* <p
                 style={{
                     position: "absolute",
                     width: "245px",
@@ -115,7 +154,7 @@ function Home() {
                     fontWeight: 700,
                     fontSize: "17px",
                     lineHeight: "150%",
-                    /* or 42px */
+                    /* or 42px *
     
                     textAlign: "Left",
     
@@ -123,7 +162,9 @@ function Home() {
                   }}
             >
                 Search
-            </p>
+            </p> */}
+
+
 
         </div>
 
@@ -131,37 +172,39 @@ function Home() {
         {
             visible ?
             <>
+            
             <div style={{
                 display: "flex",
-                flexDirection: "row"
+                flexDirection: "row",
+                //width: 300
             }}>
                 
-                {
-                    [0, 1, 2, 3, 4].map((data, key) => (
+                    {
+                        [0, 1, 2, 3, 4].map((data, key) => (
 
-                        <div style={{
-                            width: 60,
-                            height: 30,
-                            background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
-                            position: "absolute",
-                            marginTop: - 480 ,
-                            marginLeft: - (150 - (data*70)),
-                            borderRadius: 50
-        
-                        }}>
-        
-                        </div>
+                            <div style={{
+                                width: 60,
+                                height: 30,
+                                background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
+                                position: "absolute",
+                                marginTop: - 480 ,
+                                marginLeft: - (150 - (data*70)),
+                                borderRadius: 50
+            
+                            }}>
+            
+                            </div>
 
-                    ))
-
-
+                        ))
 
 
-                }
 
+
+                    }
+                
 
             </div>
-
+            
 
                 
             <div style={{
@@ -238,7 +281,9 @@ function Home() {
                     }}></div>
                     
                     {
-                        ["NIVEA MEN", "FRAGRANCE", "Lancome", "Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
+                        ["NIVEA MEN", "FRAGRANCE", "Lancome", "Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome"]
+                        .filter(item => item.toLowerCase().includes(searchVal.toLowerCase()))
+                        .map((data, key) => (
 
                             <div 
                                 onClick={() => navigate("/Product")}
