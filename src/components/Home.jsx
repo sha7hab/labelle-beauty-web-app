@@ -369,7 +369,7 @@ function Home() {
 
                                         <p style={{
                                             position: "absolute",
-                                            color: "black",
+                                            color: "#EFEFF2",
                                             marginTop: 100,
                                             marginLeft: 22,
                                             paddingTop: 5,
