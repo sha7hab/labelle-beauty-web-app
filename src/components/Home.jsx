@@ -27,23 +27,32 @@ function Home() {
     const [visible, setVisible] = useState(true);
     const navigate = useNavigate();
 
+    const [cats, setCats] = useState([true, true, true, true, true]);
+
     const [searchVal, setSearchVal] = useState("");
 
     return (
         <header className="App-header">
 
+            
 
         <div 
             style={{
                 width: 387, 
                 height: "795px", 
                 marginTop: 0, 
+                marginright: 0, 
                 background: "linear-gradient(160.94deg, #FFFFFF 3.83%, #FCF3F4 76.26%)",
-                borderRadius: 45 
+                borderRadius: 45,
+                display: "flex",
+                flexDirection: "row"
                 }}
             >
 
+
         </div>
+
+        
         
         <Link to="/">
         <img
@@ -73,6 +82,8 @@ function Home() {
         </img>
         </Link>
 
+        
+
         <p
               style={{
                 position: "absolute",
@@ -96,7 +107,8 @@ function Home() {
               
               
             </p>
-
+            
+            
             <p
               style={{
                 position: "absolute",
@@ -122,6 +134,8 @@ function Home() {
             </p>
 
             
+
+            
         
         <div
             style={{
@@ -134,6 +148,8 @@ function Home() {
                 position: "absolute",
             }}
         >   
+
+            
 
         <input
             type="text"
@@ -203,10 +219,17 @@ function Home() {
 
         
 
+        
+
 
         {
+            
+                
+                
+
             visible ?
             <>          
+              
               
                 <div style={{
                     display: "flex",
@@ -288,7 +311,9 @@ function Home() {
                                             () => 
                                             //navigate("/Product", {name: 'ali'})
                                             {
-
+                                                var obj = cats;
+                                                obj[key]=(!obj[key]); //I am correctly getting discount in e.target.value
+                                                setCats([...obj]);
                                             }
                                         }
                                         style={{
@@ -316,8 +341,8 @@ function Home() {
                                             height: 30,
                                             borderRadius: 50,
                                             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-                                            opacity: key == 1 ? 1 : 0.32,
-                                            background: key == 1 ? "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)" : "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
+                                            opacity: cats[key] == true ? 1 : 0.32,
+                                            background: cats[key] == true ? "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)" : "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
                                             
                                         }}>{data.name}</p>
 
@@ -475,6 +500,8 @@ function Home() {
 
         </div>
 
+        
+
         <div
             
           style={{
@@ -528,10 +555,12 @@ function Home() {
         
 
         
-
+        
 
 
       </header>
+
+      
     );
   }
   
