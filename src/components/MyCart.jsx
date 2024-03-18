@@ -10,6 +10,9 @@ import multiLift from "../img/multiLift.png";
 import styler from "../img/styler.png";
 import facePowder from "../img/facePowder.png";
 
+import dry from "../img/dry.jpg";
+import rexona from "../img/rexona.jpg";
+
 import arrowIcon from "../img/arrow.png";
 import arrowLeft from "../img/arrow-left.svg";
 
@@ -88,12 +91,12 @@ function MyCart() {
                 color: "#6A515E",
               }}
             >
-              My Cart
+              سبد خرید
             </p>
         
         
         {
-            [0, 1].map((data, key) => (
+            ["Rexona Deo", "Nivea Deep"].map((data, key) => (
                 <div style={{
                     position: "absolute",
                     width: 350,
@@ -109,20 +112,21 @@ function MyCart() {
                         fontWeight: 700,
                         fontSize: "18px",
                         color: "#6A515E",
-                        marginTop: 20
+                        marginTop: 20,
+                        marginLeft: -30
                     }}>
-                        Pink Diamond
+                        {data}
                     </p>
                     <p style={{
                         fontFamily: 'Poppins',
                         fontStyle: "normal",
                         fontWeight: 400,
-                        fontSize: "12px",
+                        fontSize: "13px",
                         color: "#9B97B6",
                         marginTop: -15,
-                        marginLeft: 60
+                        marginLeft: -10
                     }}>
-                        Round Cut Cubic Zircon Stones.
+                        رکسونا اسپرت مردانه موشن
                     </p>
                     
                     <div>
@@ -186,15 +190,15 @@ function MyCart() {
                             fontFamily: 'Poppins',
                             fontStyle: "normal",
                             fontWeight: 400,
-                            fontSize: "12px",
+                            fontSize: "14px",
                             color: "#6A515E",
                             marginTop: 5
                         }}>
-                            $ 600
+                            ۱۲۴،۰۰۰
                         </p>
                     </div>
                     <img 
-                                src={perfume}
+                                src={key == 0 ? rexona : dry}
                                 style={{
                                     position: "absolute",
                                     width: 80,
@@ -224,9 +228,9 @@ function MyCart() {
                         fontSize: "22px",
                         color: "#6A515E",
                         marginTop: 20,
-                        marginLeft: -200
+                        marginLeft: 0
                     }}>
-                        Payment
+                        لیست پرداخت
                     </p>
 
                     <p style={{
@@ -238,7 +242,7 @@ function MyCart() {
                         marginTop: 20,
                         marginLeft: -220
                     }}>
-                        Item total
+                        مجموع اقلام
                     </p>
 
                     <p style={{
@@ -250,7 +254,7 @@ function MyCart() {
                         marginTop: -35,
                         marginLeft: 270
                     }}>
-                        $1000
+                        ۲۴۸،۰۰۰
                     </p>
 
                     <p style={{
@@ -260,9 +264,9 @@ function MyCart() {
                         fontSize: "16px",
                         color: "#6A515E",
                         marginTop: 20,
-                        marginLeft: -205
+                        marginLeft: -220
                     }}>
-                        Delivery fee
+                        هزینه ارسال
                     </p>
 
                     <p style={{
@@ -272,9 +276,9 @@ function MyCart() {
                         fontSize: "16px",
                         color: "#6A515E",
                         marginTop: -35,
-                        marginLeft: 288
+                        marginLeft: 275
                     }}>
-                        $50
+                        ۳۵،۰۰۰
                     </p>
 
                     <div style={{
@@ -293,9 +297,9 @@ function MyCart() {
                         fontSize: "16px",
                         color: "#6A515E",
                         marginTop: 20,
-                        marginLeft: -253
+                        marginLeft: -180
                     }}>
-                        Total
+                        مبلغ قابل پرداخت
                     </p>
 
                     <p style={{
@@ -307,7 +311,7 @@ function MyCart() {
                         marginTop: -35,
                         marginLeft: 265
                     }}>
-                        $1050
+                        ۲۸۳،۰۰۰
                     </p>
 
 
@@ -339,7 +343,7 @@ function MyCart() {
                             fontWeight: "600",
                             marginTop: 20
                         }}>
-                            Go to Checkout
+                            ورود به درگاه پرداخت
                         </p>
     
                     </div>
