@@ -125,12 +125,12 @@ function Onboarding() {
           {
 
           
-            [0, 1, 2, 3].map((data, key) => (
+            [3, 2, 1, 0].map((data, key) => (
 
               <div style={{
                 width: 10,
                 height: 10,
-                background: key == activeKey ? "rgba(160, 103, 132, 1)" : "rgba(160, 103, 132, 0.16)",
+                background: data == activeKey ? "rgba(160, 103, 132, 1)" : "rgba(160, 103, 132, 0.16)",
                 position: "absolute",
                 marginTop: -20,
                 marginLeft: (125 + (key*25)),
@@ -270,6 +270,7 @@ function Onboarding() {
             marginLeft: -17,
             marginTop: -85,
             position: "absolute",
+            transform: "rotate(180deg)"
 
           }}
         ></img>
