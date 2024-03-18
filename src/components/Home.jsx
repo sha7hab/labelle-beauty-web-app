@@ -173,7 +173,7 @@ function Home() {
             style={{
                 width: 330,
                 height: 70,
-                marginTop: -250,
+                marginTop: -300,
                 borderRadius: 18,
                 
                 //backgroundColor: "black",
@@ -186,7 +186,7 @@ function Home() {
         <input
             type="text"
             //value={searchVal}
-            placeholder= "جستجو در محصولات"
+            placeholder= "                              جستجو در محصولات"
             
             onChange={(e) => {
               setSearchVal(e.target.value);
@@ -217,7 +217,8 @@ function Home() {
               height: "50px",
               boxSizing: "border-box",
               paddingLeft: "1rem",
-              backgroundColor: "white"
+              
+              background: 'rgba(0,0,0,0)'                                          
               //backgroundColor: 'rgba(0,0,0,0)',
             }}
          />
@@ -329,7 +330,7 @@ function Home() {
 
                     } */}
 
-                    <div style={{width: 380, marginTop: -480, marginLeft: -190}}>
+                    <div style={{width: 380, marginTop: -500, marginLeft: -190}}>
                         <ScrollMenu RTL={true} onWheel={onWheelHandler}  style={{height: 500, backgroundColor: "red", width: "0"}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
 
                             <div style={{
@@ -405,7 +406,7 @@ function Home() {
 
 
 
-                    <div style={{width: 380, marginTop: -390, marginLeft: -190}}>
+                    <div style={{width: 380, marginTop: -370, marginLeft: -190}}>
                     <ScrollMenu RTL={true} onWheel={onWheelHandler} style={{}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
 
                         
