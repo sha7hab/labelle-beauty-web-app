@@ -153,7 +153,7 @@ function Onboarding() {
                 width: "295px",
                 height: "89px",
                 left: "20px",
-                top: "0px",
+                top: "-20px",
 
                 fontFamily: 'Merriweather',
                 fontStyle: "normal",
@@ -169,22 +169,22 @@ function Onboarding() {
             >
               {
                 activeKey == 0 ?
-                "The best Perfumes find in labelle.ir!"
+                "اگه وسایل اورجینال با قیمت مناسب می خوای یه سر به سایت بزن"
                 : false
               }
               {
                 activeKey == 1 ?
-                "Lift your skin with multi-lift cream!"
+                "قبل از هرچیز هایلایت اطلاعیه را ببین"
                 : false
               }
               {
                 activeKey == 2 ?
-                "Darker eyelashes w/ sourcils styler!"
+                "ارسال به سراسر کشور در همه شهرها با پست "
                 : false
               }
               {
                 activeKey == 3 ?
-                "Real scent of flowers in spring!"
+                "لوازم آرایشی و بهداشتی، ادکلن، تجهیزات آرایشگری، به صورت عمده و کلی"
                 : false
               }
               

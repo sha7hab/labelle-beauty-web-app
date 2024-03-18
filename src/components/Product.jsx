@@ -7,18 +7,27 @@ import cartIcon from "../img/cart.png";
 
 import perfume from "../img/perfume.png";
 import multiLift from "../img/multiLift.png";
-import styler from "../img/styler.png";
+import discount from "../img/discount.jpg";
+import styler from "../img/tag.jpeg";
 import facePowder from "../img/facePowder.png";
 
 import arrowIcon from "../img/arrow.png";
 import arrowLeft from "../img/arrow-left.svg";
 
+//import { useNavigate } from 'react-router-dom';
+
+import rexona from "../img/rexona.jpg";
+
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 
-function Product() {
+function Product({ route, navigation }) {
 
     const [visible, setVisible] = useState(true);
+
+    
+
+    //const { data } = route.params;
 
     return (
         <header className="App-header">
@@ -85,7 +94,7 @@ function Product() {
                 color: "#6A515E",
               }}
             >
-              Pink Diamond
+              Rexona Deo
             </p>
         
         <div style={{
@@ -129,12 +138,12 @@ function Product() {
             }}>
 
                     <img 
-                        src={perfume}
+                        src={rexona}
                         style={{
                             position: "absolute",
-                            width: 200,
-                            marginTop: -720,
-                            marginLeft: -100
+                            width: 280,
+                            marginTop: -760,
+                            marginLeft: -140
                         }}
                         ></img> 
                 
@@ -204,7 +213,7 @@ function Product() {
                     }}></div>
                     
                     {
-                        ["pink", "$600", "20%", "0.14 Ct"].map((data, key) => (
+                        ["MotionSense", "۱۴۳،۰۰۰", "20%", "م72ساعته"].map((data, key) => (
 
                             <div style={{
                                 width: 60,
@@ -217,12 +226,12 @@ function Product() {
                             }}>
     
                                 <img 
-                                    src={key%2 == 0 ? perfume : multiLift}
+                                    src={key == 0 ? perfume : key == 1 ? styler : key == 2 ? discount : multiLift}
                                     style={{
                                         position: "absolute",
                                         width: 40,
                                         marginTop: 10,
-                                        marginLeft: -20
+                                        marginLeft: -20,
                                     }}
                                     ></img> 
 
@@ -250,7 +259,7 @@ function Product() {
                         position: "absolute",
                         width: "270px",
                         height: "89px",
-                        marginLeft: -160,
+                        marginLeft: -30,
                         marginTop: -300,
                         fontFamily: 'Merriweather',
                         fontStyle: "normal",
@@ -272,7 +281,7 @@ function Product() {
                         position: "absolute",
                         width: "320px",
                         height: "89px",
-                        marginLeft: -160,
+                        marginLeft: -175,
                         marginTop: -275,
                         fontFamily: 'Poppins',
                         fontStyle: "normal",
@@ -281,12 +290,15 @@ function Product() {
                         lineHeight: "28px",
                         /* or 42px */
 
-                        textAlign: "Left",
+                        textAlign: "Right",
 
                         color: "#9B97B6",
                     }}
                     >
-                    Round Cut Cubic Zircon Stones. 925 Sterling Silver with Rhodium Platting. Cubic zircon is Master Replica of Diamond. Best Stone After masionate and Diamond. Best Material After. Gold is Sterling Silver its main Metal Used. Perfect Gift For you Special Ones
+                        {/* {route.params.test} */}
+                    هیچ ویژگی در مردان به اندازه خوشبو بودن نمی‌تواند جلب توجه کند.
+                     رایحه خوب به انسان اعتماد به نفس می بخشد.
+                     مام مردانه رکسونا اینویزیبل به شکل صابونی، بدون آنکه ردی روی لباس شما به جا بگذارد رایحه ای خوشایند و طراوت انگیز به بدن شما می‌بخشد
                     </p>
                 
                 
@@ -325,11 +337,11 @@ function Product() {
                         <p style={{
                             color: "white",
                             fontFamily: 'Merriweather',
-                            fontSize: "18px",
+                            fontSize: "22px",
                             fontWeight: "600",
-                            marginTop: 20
+                            marginTop: 15
                         }}>
-                            Add to Cart
+                            به سبد اضافه شود
                         </p>
     
                     </div>

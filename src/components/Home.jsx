@@ -20,6 +20,8 @@ import arrowIcon from "../img/arrow.png";
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 
+import data from "../data/data";
+
 function Home() {
 
     const [visible, setVisible] = useState(true);
@@ -90,7 +92,9 @@ function Home() {
                 color: "#6A515E",
               }}
             >
-              Labelle Beauty <br/> for you
+              Cute Beauty
+              لوازم آرایشی
+              
             </p>
 
         
@@ -98,7 +102,7 @@ function Home() {
             style={{
                 width: 330,
                 height: 70,
-                marginTop: -270,
+                marginTop: -250,
                 borderRadius: 18,
                 //backgroundColor: "black",
                 position: "absolute",
@@ -137,6 +141,7 @@ function Home() {
               height: "50px",
               boxSizing: "border-box",
               paddingLeft: "1rem",
+              backgroundColor: "white"
               //backgroundColor: 'rgba(0,0,0,0)',
             }}
          />
@@ -281,12 +286,14 @@ function Home() {
                     }}></div>
                     
                     {
-                        ["NIVEA MEN", "FRAGRANCE", "Lancome", "Diamond Ring", "Gold Ring", "Lancome", "Diamond Ring", "Gold Ring", "Lancome"]
-                        .filter(item => item.toLowerCase().includes(searchVal.toLowerCase()))
-                        .map((data, key) => (
+                        
+                        data.forMenList
+                        .filter(item => item.name.toLowerCase().includes(searchVal.toLowerCase()) ||
+                                item.desc.toLowerCase().includes(searchVal.toLowerCase()))
+                        .map((data, key) => {
 
-                            <div 
-                                onClick={() => navigate("/Product")}
+                            return <div
+                                onClick={() => navigate("/Product", {name: 'ali'})}
                                 style={{
                                 width: 200,
                                 height: 300,
@@ -298,7 +305,7 @@ function Home() {
                             }}>
     
                                 <img 
-                                    src={key%2 == 0 ? deep : frag}
+                                    src={data.pic}
                                     style={{
                                         position: "absolute",
                                         width: 110,
@@ -314,16 +321,16 @@ function Home() {
                                     fontSize: 24,
                                     fontWeight: "700",
                                     width: 160
-                                }}>{data}</p>
+                                }}>{data.name}</p>
                                 <p style={{
                                     position: "absolute",
                                     color: "black",
                                     marginTop: 210,
                                     marginLeft: 10,
-                                    width: 190,
+                                    width: 230,
                                     fontSize: 14
                                 }}>
-                                    اسپری مردانه نیوآ
+                                    {data.desc}
                                     <br/> 
                                     DEEP 48h</p>
     
@@ -340,16 +347,17 @@ function Home() {
                                         style={{
                                             position: "absolute",
                                             marginTop: 9,
-                                            marginLeft: 40
+                                            marginLeft: 16,
+                                            fontSize: 19
                                         }}
-                                    >۸۷،۰۰۰</p>
+                                    >{data.price}</p>
                                 </div>
             
-                            </div>
+                            </div> 
     
-                        
+                            }
 
-                    ))}
+                    )}
                     </ScrollMenu>
                     </div>
                 
