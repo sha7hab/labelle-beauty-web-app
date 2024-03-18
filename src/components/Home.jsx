@@ -78,7 +78,7 @@ function Home() {
                 position: "absolute",
                 width: "270px",
                 height: "89px",
-                marginLeft: -50,
+                marginLeft: 75,
                 marginTop: -450,
                 fontFamily: 'Merriweather',
                 fontStyle: "normal",
@@ -93,10 +93,35 @@ function Home() {
               }}
             >
               Cute Beauty
-              لوازم آرایشی
+              
               
             </p>
 
+            <p
+              style={{
+                position: "absolute",
+                width: "400px",
+                height: "89px",
+                marginLeft: 180,
+                marginTop: -370,
+                fontFamily: 'Merriweather',
+                fontStyle: "normal",
+                fontWeight: 700,
+                fontSize: "22px",
+                lineHeight: "150%",
+                /* or 42px */
+
+                textAlign: "Left",
+
+                color: "#6A515E",
+              }}
+            >
+              لوازم آرایشی و بهداشتی
+              
+              
+            </p>
+
+            
         
         <div
             style={{
@@ -104,6 +129,7 @@ function Home() {
                 height: 70,
                 marginTop: -250,
                 borderRadius: 18,
+                
                 //backgroundColor: "black",
                 position: "absolute",
             }}
@@ -112,7 +138,8 @@ function Home() {
         <input
             type="text"
             //value={searchVal}
-            placeholder= "Search"
+            placeholder= "جستجو در محصولات"
+            
             onChange={(e) => {
               setSearchVal(e.target.value);
               /* setLiversSelect(true);
@@ -138,6 +165,7 @@ function Home() {
               borderRadius: "13px",
               marginTop: "10px",
               marginLeft: "0px",
+              
               height: "50px",
               boxSizing: "border-box",
               paddingLeft: "1rem",
@@ -173,167 +201,52 @@ function Home() {
 
         </div>
 
+        
+
 
         {
             visible ?
-            <>
-            
-            <div style={{
-                display: "flex",
-                flexDirection: "row",
-                //width: 300
-            }}>
-                
-                    {
-                        [0, 1, 2, 3, 4].map((data, key) => (
+            <>          
+              
+                <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    //overflowX: 'scroll',
+                    maxWidth: 0,
 
-                            <div style={{
-                                width: 60,
-                                height: 30,
-                                background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
-                                position: "absolute",
-                                marginTop: - 480 ,
-                                marginLeft: - (150 - (data*70)),
-                                borderRadius: 50
-            
-                            }}>
-            
-                            </div>
-
-                        ))
-
-
-
-
-                    }
-                
-
-            </div>
-            
-
-                
-            <div style={{
-                display: "flex",
-                flexDirection: "row",
-                //overflowX: 'scroll',
-                maxWidth: 0,
-
-            }}>
-                
-                
-                {/* {
-                    ["Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
-
-                        <div style={{
-                            width: 200,
-                            height: 300,
-                            background: "white",
-                            position: "absolute",
-                            marginTop: - 430 ,
-                            marginLeft: - (160 - (key*220)),
-                            borderRadius: 35
-        
-                        }}>
-
-                            <p style={{
-                                position: "absolute",
-                                color: "black",
-                                marginTop: 170,
-                                marginLeft: 22,
-                                fontSize: 24,
-                                fontWeight: "700"
-                            }}>{data}</p>
-                            <p style={{
-                                position: "absolute",
-                                color: "black",
-                                marginTop: 210,
-                                marginLeft: 0,
-                                fontSize: 14
-                            }}>Pure ring with Diamonds (0.1400 Ct)</p>
-
-                            <div style={{
-                                width: 130,
-                                height: 40,
-                                position: "absolute",
-                                marginTop: 250,
-                                marginLeft: 35,
-                                borderRadius: 9,
-                                background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
-                            }}>
-                                <p
-                                    style={{
-                                        position: "absolute",
-                                        marginTop: 5,
-                                        marginLeft: 30
-                                    }}
-                                >$ 600</p>
-                            </div>
-        
-                        </div>
-
-                    ))
-
-
-
-
-                } */}
-
-                <div style={{width: 380, marginTop: -430, marginLeft: -190}}>
-                <ScrollMenu style={{}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
-
-                    <div style={{
-                        marginLeft: 30
-                    }}></div>
+                }}>
                     
-                    {
-                        
-                        data.forMenList
-                        .filter(item => item.name.toLowerCase().includes(searchVal.toLowerCase()) ||
-                                item.desc.toLowerCase().includes(searchVal.toLowerCase()))
-                        .map((data, key) => {
+                    
+                    {/* {
+                        ["Diamond Ring", "Gold Ring", "Lancome"].map((data, key) => (
 
-                            return <div
-                                onClick={() => navigate("/Product", {name: 'ali'})}
-                                style={{
+                            <div style={{
                                 width: 200,
                                 height: 300,
                                 background: "white",
-                                marginTop: 0 ,
-                                marginRight: 20,
-                                borderRadius: 35,
-                                marginBottom: 80
+                                position: "absolute",
+                                marginTop: - 430 ,
+                                marginLeft: - (160 - (key*220)),
+                                borderRadius: 35
+            
                             }}>
-    
-                                <img 
-                                    src={data.pic}
-                                    style={{
-                                        position: "absolute",
-                                        width: 110,
-                                        marginTop: 30,
-                                        marginLeft: -55
-                                    }}
-                                    ></img> 
+
                                 <p style={{
                                     position: "absolute",
                                     color: "black",
                                     marginTop: 170,
                                     marginLeft: 22,
                                     fontSize: 24,
-                                    fontWeight: "700",
-                                    width: 160
-                                }}>{data.name}</p>
+                                    fontWeight: "700"
+                                }}>{data}</p>
                                 <p style={{
                                     position: "absolute",
                                     color: "black",
                                     marginTop: 210,
-                                    marginLeft: 10,
-                                    width: 230,
+                                    marginLeft: 0,
                                     fontSize: 14
-                                }}>
-                                    {data.desc}
-                                    <br/> 
-                                    DEEP 48h</p>
-    
+                                }}>Pure ring with Diamonds (0.1400 Ct)</p>
+
                                 <div style={{
                                     width: 130,
                                     height: 40,
@@ -346,36 +259,182 @@ function Home() {
                                     <p
                                         style={{
                                             position: "absolute",
-                                            marginTop: 9,
-                                            marginLeft: 16,
-                                            fontSize: 19
+                                            marginTop: 5,
+                                            marginLeft: 30
                                         }}
-                                    >{data.price}</p>
+                                    >$ 600</p>
                                 </div>
             
-                            </div> 
-    
-                            }
+                            </div>
 
-                    )}
-                    </ScrollMenu>
+                        ))
+
+
+
+
+                    } */}
+
+                    <div style={{width: 380, marginTop: -480, marginLeft: -190}}>
+                        <ScrollMenu style={{height: 500, backgroundColor: "red", width: "0"}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
+
+                            
+                            {
+                                
+                                data.categoryList
+                                .map((data, key) => {
+
+                                    return <div
+                                        onClick={
+                                            () => 
+                                            //navigate("/Product", {name: 'ali'})
+                                            {
+
+                                            }
+                                        }
+                                        style={{
+                                            cursor: "pointer",
+                                            width: 110,
+                                            height: 450,
+                                            //background: "white",
+                                            marginTop: -100 ,
+                                            marginRight: 0,
+                                            borderRadius: 35,
+                                            marginBottom: 80,
+                                        
+                                    }}>
+
+
+                                        <p style={{
+                                            position: "absolute",
+                                            color: "black",
+                                            marginTop: 100,
+                                            marginLeft: 22,
+                                            paddingTop: 5,
+                                            fontSize: 18,
+                                            fontWeight: "500",
+                                            width: 100,
+                                            height: 30,
+                                            borderRadius: 50,
+                                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                                            opacity: key == 1 ? 1 : 0.32,
+                                            background: key == 1 ? "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)" : "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
+                                            
+                                        }}>{data.name}</p>
+
+
+
+                    
+                                    </div> 
+
+                                    }
+
+                            )}
+
+                                <div style={{
+                                    width: 30
+                                }}>
+
+                                </div>
+
+
+                        </ScrollMenu>
+
+                        
+
+                        
                     </div>
+
+
+
+
+                    <div style={{width: 380, marginTop: -390, marginLeft: -190}}>
+                    <ScrollMenu style={{}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
+
+                        <div style={{
+                            marginLeft: 30
+                        }}></div>
+                        
+                        {
+                            
+                            data.forMenList
+                            .filter(item => item.name.toLowerCase().includes(searchVal.toLowerCase()) ||
+                                    item.desc.toLowerCase().includes(searchVal.toLowerCase()))
+                            .map((data, key) => {
+
+                                return <div
+                                    onClick={() => navigate("/Product", {name: 'ali'})}
+                                    style={{
+                                    width: 200,
+                                    height: 300,
+                                    background: "white",
+                                    marginTop: 0 ,
+                                    marginRight: 20,
+                                    borderRadius: 35,
+                                    marginBottom: 80,
+                                    cursor: "pointer",
+                                    boxShadow: "0px 5px 5px rgba(0, 0, 0, 0.1)",
+                                }}>
+        
+                                    <img 
+                                        src={data.pic}
+                                        style={{
+                                            position: "absolute",
+                                            width: 110,
+                                            marginTop: 30,
+                                            marginLeft: -55
+                                        }}
+                                        ></img> 
+                                    <p style={{
+                                        position: "absolute",
+                                        color: "black",
+                                        marginTop: 170,
+                                        marginLeft: 22,
+                                        fontSize: 24,
+                                        fontWeight: "700",
+                                        width: 160
+                                    }}>{data.name}</p>
+                                    <p style={{
+                                        position: "absolute",
+                                        color: "black",
+                                        marginTop: 210,
+                                        marginLeft: 10,
+                                        width: 230,
+                                        fontSize: 14
+                                    }}>
+                                        {data.desc}
+                                        <br/> 
+                                        DEEP 48h</p>
+        
+                                    <div style={{
+                                        width: 130,
+                                        height: 40,
+                                        position: "absolute",
+                                        marginTop: 250,
+                                        marginLeft: 35,
+                                        borderRadius: 9,
+                                        background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
+                                    }}>
+                                        <p
+                                            style={{
+                                                position: "absolute",
+                                                marginTop: 9,
+                                                marginLeft: 16,
+                                                fontSize: 19
+                                            }}
+                                        >{data.price}</p>
+                                    </div>
                 
-                
+                                </div> 
+        
+                                }
 
-            </div>
+                        )}
+                        </ScrollMenu>
+                        </div>
+                    
+                    
 
-            {/* <div style={{
-                    width: 500,
-                    height: 490,
-                    backgroundColor: "black",
-                    position: "absolute",
-                    marginTop: 300,
-                    marginLeft: 887
-                }}>
-
-                </div> */}
-
+                </div>
             
             </>
             :false

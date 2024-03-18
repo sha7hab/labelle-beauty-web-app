@@ -37,6 +37,44 @@ const data = {
             price: "۲۵۸,۰۰۰ تومان",
         }
     ],
+    categoryList:
+    [
+        {
+            name: "آرایشی",
+            desc: "رکسونا اسپرت مردانه موشن",
+            pic: require("../img/rexona.jpg"),
+            radius: 50,
+            price: "۱۴۳،۰۰۰ تومان",
+        },
+        {
+            name: "بهداشتی",
+            desc: "اسپری بدن ۷۲ ساعته دری فرش مردانه نیوآ",
+            pic: require("../img/frag.webp"),
+            radius: 50,
+            price: "۲۵۸,۰۰۰ تومان",
+        },
+        {
+            name: "ادکلن",
+            desc: "اسپرت بدن ۴۸ ساعته اسپرت مردانه داو",
+            pic: require("../img/deep.png"),
+            radius: 50,
+            price: "۲۶۵,۰۰۰ تومان",
+        },
+        {
+            name: "تجهیزات",
+            desc: "FRAGRANCE",
+            pic: require("../img/deep.png"),
+            radius: 50,
+            price: "۲۴۸,۰۰۰ تومان",
+        },
+        {
+            name: "خرید عمده",
+            desc: "اسپری بدن ۷۲ ساعته مردانه نیوآ",
+            pic: require("../img/dry.jpg"),
+            radius: 50,
+            price: "۲۵۸,۰۰۰ تومان",
+        }
+    ],
     kebabList: [
         {
             number: "1",

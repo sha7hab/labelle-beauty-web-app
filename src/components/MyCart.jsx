@@ -16,6 +16,7 @@ import rexona from "../img/rexona.jpg";
 import arrowIcon from "../img/arrow.png";
 import arrowLeft from "../img/arrow-left.svg";
 
+
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 
@@ -77,11 +78,11 @@ function MyCart() {
                 position: "absolute",
                 width: "270px",
                 height: "89px",
-                marginLeft: 170,
+                marginLeft: 165,
                 marginTop: -583,
                 fontFamily: 'Merriweather',
                 fontStyle: "normal",
-                fontWeight: 400,
+                fontWeight: 500,
                 fontSize: "28px",
                 lineHeight: "150%",
                 /* or 42px */
@@ -103,7 +104,7 @@ function MyCart() {
                     height: 130,
                     borderRadius: 25,
                     backgroundColor: "white",
-                    marginTop: - (300 - (key*300)),
+                    marginTop: - (350 - (key*300)),
                     marginLeft: 0
                 }}>
                     <p style={{
@@ -222,12 +223,12 @@ function MyCart() {
                     marginLeft: 0
                 }}>
                     <p style={{
-                        fontFamily: 'Merriweather',
+                        fontFamily: 'calibri',
                         fontStyle: "normal",
-                        fontWeight: 400,
+                        fontWeight: 500,
                         fontSize: "22px",
                         color: "#6A515E",
-                        marginTop: 20,
+                        marginTop: 0,
                         marginLeft: 0
                     }}>
                         لیست پرداخت
@@ -237,11 +238,25 @@ function MyCart() {
                         fontFamily: 'Merriweather',
                         fontStyle: "normal",
                         fontWeight: 400,
-                        fontSize: "16px",
+                        fontSize: "17px",
                         color: "#6A515E",
                         marginTop: 20,
-                        marginLeft: -220
+                        marginLeft: -250
                     }}>
+                        
+                        ۲۴۸،۰۰۰
+                    </p>
+
+                    <p style={{
+                        fontFamily: 'Merriweather',
+                        fontStyle: "normal",
+                        fontWeight: 500,
+                        fontSize: "16px",
+                        color: "#6A515E",
+                        marginTop: -44,
+                        marginLeft: 245
+                    }}>
+                        
                         مجموع اقلام
                     </p>
 
@@ -249,36 +264,26 @@ function MyCart() {
                         fontFamily: 'Merriweather',
                         fontStyle: "normal",
                         fontWeight: 400,
-                        fontSize: "16px",
+                        fontSize: "17px",
                         color: "#6A515E",
-                        marginTop: -35,
-                        marginLeft: 270
-                    }}>
-                        ۲۴۸،۰۰۰
-                    </p>
-
-                    <p style={{
-                        fontFamily: 'Merriweather',
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "16px",
-                        color: "#6A515E",
-                        marginTop: 20,
-                        marginLeft: -220
-                    }}>
-                        هزینه ارسال
-                    </p>
-
-                    <p style={{
-                        fontFamily: 'Merriweather',
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "16px",
-                        color: "#6A515E",
-                        marginTop: -35,
-                        marginLeft: 275
+                        marginTop: 30,
+                        marginLeft: -250
                     }}>
                         ۳۵،۰۰۰
+                        
+                    </p>
+
+                    <p style={{
+                        fontFamily: 'Merriweather',
+                        fontStyle: "normal",
+                        fontWeight: 500,
+                        fontSize: "16px",
+                        color: "#6A515E",
+                        marginTop: -44,
+                        marginLeft: 245
+                    }}>
+                        
+                        هزینه ارسال
                     </p>
 
                     <div style={{
@@ -297,9 +302,10 @@ function MyCart() {
                         fontSize: "16px",
                         color: "#6A515E",
                         marginTop: 20,
-                        marginLeft: -180
+                        marginLeft: -240
                     }}>
-                        مبلغ قابل پرداخت
+                        
+                        ۲۸۳،۰۰۰
                     </p>
 
                     <p style={{
@@ -309,9 +315,10 @@ function MyCart() {
                         fontSize: "16px",
                         color: "#6A515E",
                         marginTop: -35,
-                        marginLeft: 265
+                        marginLeft: 200
                     }}>
-                        ۲۸۳،۰۰۰
+                        مبلغ قابل پرداخت
+                        
                     </p>
 
 
@@ -344,6 +351,7 @@ function MyCart() {
                             marginTop: 20
                         }}>
                             ورود به درگاه پرداخت
+                            
                         </p>
     
                     </div>
