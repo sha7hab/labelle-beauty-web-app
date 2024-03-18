@@ -22,6 +22,29 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 import data from "../data/data";
 
+
+function onWheel(
+    apiObj: scrollVisibilityApiType,
+    ev: React.WheelEvent,
+    RTL: boolean
+  ){
+    const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
+  
+    if (isThouchpad) {
+      ev.stopPropagation();
+      return;
+    }
+    const scrollNext = RTL ? apiObj.scrollPrev : apiObj.scrollNext;
+    const scrollPrev = RTL ? apiObj.scrollNext : apiObj.scrollPrev;
+  
+    if (ev.deltaY < 0) {
+      scrollPrev("smooth", false ? "end" : "start");
+    } else if (ev.deltaY > 0) {
+      scrollNext("smooth", false ? "start" : "end");
+    }
+  }
+
+
 function Home() {
 
     const [visible, setVisible] = useState(true);
@@ -30,6 +53,15 @@ function Home() {
     const [cats, setCats] = useState([true, true, true, true, true]);
 
     const [searchVal, setSearchVal] = useState("");
+
+
+
+    const onWheelHandler = React.useCallback((...args) => onWheel(...args, true), [
+        true
+      ]);
+
+
+
 
     return (
         <header className="App-header">
@@ -298,9 +330,14 @@ function Home() {
                     } */}
 
                     <div style={{width: 380, marginTop: -480, marginLeft: -190}}>
-                        <ScrollMenu style={{height: 500, backgroundColor: "red", width: "0"}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
+                        <ScrollMenu RTL={true} onWheel={onWheelHandler}  style={{height: 500, backgroundColor: "red", width: "0"}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
 
-                            
+                            <div style={{
+                                    width: 10
+                                }}>
+
+                                </div>
+
                             {
                                 
                                 data.categoryList
@@ -355,11 +392,7 @@ function Home() {
 
                             )}
 
-                                <div style={{
-                                    width: 30
-                                }}>
-
-                                </div>
+                                
 
 
                         </ScrollMenu>
@@ -373,11 +406,9 @@ function Home() {
 
 
                     <div style={{width: 380, marginTop: -390, marginLeft: -190}}>
-                    <ScrollMenu style={{}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
+                    <ScrollMenu RTL={true} onWheel={onWheelHandler} style={{}} /* LeftArrow={LeftArrow} RightArrow={RightArrow} */>
 
-                        <div style={{
-                            marginLeft: 30
-                        }}></div>
+                        
                         
                         {
                             
@@ -404,16 +435,16 @@ function Home() {
                                         src={data.pic}
                                         style={{
                                             position: "absolute",
-                                            width: 110,
+                                            width: 100,
                                             marginTop: 30,
-                                            marginLeft: -55
+                                            marginRight: -50
                                         }}
                                         ></img> 
                                     <p style={{
                                         position: "absolute",
                                         color: "black",
                                         marginTop: 170,
-                                        marginLeft: 22,
+                                        marginRight: 22,
                                         fontSize: 24,
                                         fontWeight: "700",
                                         width: 160
@@ -422,8 +453,8 @@ function Home() {
                                         position: "absolute",
                                         color: "black",
                                         marginTop: 210,
-                                        marginLeft: 10,
-                                        width: 230,
+                                        marginRight: 0,
+                                        width: 200,
                                         fontSize: 14
                                     }}>
                                         {data.desc}
@@ -435,15 +466,15 @@ function Home() {
                                         height: 40,
                                         position: "absolute",
                                         marginTop: 250,
-                                        marginLeft: 35,
+                                        marginRight: 35,
                                         borderRadius: 9,
                                         background: "linear-gradient(160.94deg, #FFAE88 3.83%, #8F93EA 76.26%)",
                                     }}>
                                         <p
                                             style={{
                                                 position: "absolute",
-                                                marginTop: 9,
-                                                marginLeft: 16,
+                                                marginTop: 7,
+                                                marginRight: 20,
                                                 fontSize: 19
                                             }}
                                         >{data.price}</p>
@@ -454,6 +485,10 @@ function Home() {
                                 }
 
                         )}
+
+                        <div style={{
+                            marginLeft: 30
+                        }}></div>
                         </ScrollMenu>
                         </div>
                     

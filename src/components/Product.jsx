@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import menuIcon from "../img/menu.png";
 import cartIcon from "../img/cart.png";
 
-import perfume from "../img/perfume.png";
-import multiLift from "../img/multiLift.png";
-import discount from "../img/discount.jpg";
-import styler from "../img/tag.jpeg";
+import perfume from "../img/perfume.svg";
+import multiLift from "../img/multiLift.svg";
+import discount from "../img/discount.svg";
+import styler from "../img/tag.svg";
 import facePowder from "../img/facePowder.png";
 
 import arrowIcon from "../img/arrow.png";
@@ -141,9 +141,9 @@ function Product({ route, navigation }) {
                         src={rexona}
                         style={{
                             position: "absolute",
-                            width: 280,
-                            marginTop: -760,
-                            marginLeft: -140
+                            width: 200,
+                            marginTop: -740,
+                            marginLeft: -100
                         }}
                         ></img> 
                 
@@ -341,7 +341,7 @@ function Product({ route, navigation }) {
                             fontWeight: "600",
                             marginTop: 15
                         }}>
-                            به سبد اضافه شود
+                            افزودن به سبد خرید
                         </p>
     
                     </div>
