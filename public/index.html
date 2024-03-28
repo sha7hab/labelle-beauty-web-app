@@ -18,6 +18,10 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+
 <!--     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link href="/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
@@ -43,7 +47,35 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <!-- <div id="root"></div> -->
+    <div>
+      <p>
+        hello
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: row;">
+      <div style="width: 500px; height: 500px; background-color: blue;">
+      </div>
+      <div style="width: 500px; height: 500px; background-color: red;">
+        <div>
+          <script type="text/javascript">
+                aclib.runBanner({
+                    zoneId: '8232146',
+                });
+            </script>
+        </div>
+      
+      </div>
+      
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <div style="width: 500px; height: 500px; background-color: green;">
+      </div>
+      <div style="width: 500px; height: 500px; background-color: yellow;">
+      </div>
+      
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
